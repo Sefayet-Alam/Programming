@@ -27,19 +27,21 @@ const ll maxN=1e5+10;//for graph
 
 
 vector<ll>g[maxN];
-bool vis[maxN];
+ll depth[maxN],height[maxN];
 
-
-void dfs(ll vertex){
+void dfs(ll vertex,ll par){
     //take action on vertex after entering the vertex
-    vis[vertex]=true;
-    //cout<<vertex<<endl;
+
+
     for(ll child:g[vertex]){
         //cout<<"par:"<<vertex<<" "<<"child:"<<child<<endl;
-            if(vis[child]) continue;
-        //take action on the node before entering the child
-        dfs(child);
-        //take action on the node after exiting the child
+        if(child==par) continue;
+        depth[child]=depth[vertex]+1;
+        //take action on the node before entering the child node
+
+        dfs(child,vertex);
+        //take action on the node after exiting the child node
+        height[vertex]=max(height[vertex],height[child]+1);
     }
     //take action on the vertex after exiting the node
 }
@@ -51,26 +53,40 @@ int main()
      t=1;
     //cin>>t;
    while(t--){
-    ll n,e;
-    cin>>n>>e;
+    ll n;
+    cin>>n;
     ll v1,v2;
-    for(ll i=0;i<e;i++){
+    for(ll i=0;i<n-1;i++){
+        //as each tree has n-1 edges so i=0 -> i<n-1
         cin>>v1>>v2;
         g[v1].push_back(v2);
         g[v2].push_back(v1);
     }
-    ll cnt=0;
+
+    dfs(1,0);
+
+
     for(ll i=1;i<=n;i++){
-        if(vis[i]) continue;
-        else{
-            dfs(i);
-            cnt++;
-        }
+        cout<<depth[i]<<" "<<height[i]<<endl;;
     }
-    cout<<cnt<<endl;
    }
-
-
     return 0;
 }
+/*
+13
+1 2
+1 3
+1 13
+2 5
+3 4
+5 6
+5 7
+5 8
+8 12
+4 9
+4 10
+10 11
+
+*/
+
 

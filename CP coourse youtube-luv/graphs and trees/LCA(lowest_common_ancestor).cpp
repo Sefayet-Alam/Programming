@@ -28,21 +28,28 @@ const ll maxN=1e5+10;//for graph
 
 vector<ll>g[maxN];
 bool vis[maxN];
+ll par[maxN];
 
-
-void dfs(ll vertex){
-    //take action on vertex after entering the vertex
-    vis[vertex]=true;
-    //cout<<vertex<<endl;
-    for(ll child:g[vertex]){
-        //cout<<"par:"<<vertex<<" "<<"child:"<<child<<endl;
-            if(vis[child]) continue;
-        //take action on the node before entering the child
-        dfs(child);
-        //take action on the node after exiting the child
+void dfs(ll v,ll p=-1){
+    par[v]=p;
+    for(ll child:g[v]){
+        if(child==p) continue;
+        dfs(child,v);
     }
-    //take action on the vertex after exiting the node
+
 }
+
+vector<ll> path(ll v){
+    vector<ll> ans;
+    while(v!=-1){
+        ans.push_back(v);
+        v=par[v];
+    }
+    reverse(ans.begin(),ans.end());
+    return ans;
+}
+
+
 int main()
 {
     fast;
@@ -51,26 +58,52 @@ int main()
      t=1;
     //cin>>t;
    while(t--){
-    ll n,e;
-    cin>>n>>e;
+    ll n;
+    cin>>n;
     ll v1,v2;
-    for(ll i=0;i<e;i++){
+    for(ll i=0;i<n-1;i++){
+        //n-1 edges for n nodes in trees
         cin>>v1>>v2;
         g[v1].push_back(v2);
         g[v2].push_back(v1);
     }
-    ll cnt=0;
-    for(ll i=1;i<=n;i++){
-        if(vis[i]) continue;
+    dfs(1);
+    ll x,y;
+    cin>>x>>y;
+    vector<ll> path_x=path(x);
+    vector<ll> path_y=path(y);
+
+    ll mn_ln=min(path_x.size(),path_y.size());
+    ll lca=-1;
+    for(ll i=0;i<n;i++){
+        if(path_x[i]==path_y[i]){
+            lca=path_x[i];
+        }
         else{
-            dfs(i);
-            cnt++;
+            break;
         }
     }
-    cout<<cnt<<endl;
+    cout<<lca<<endl;
    }
 
 
     return 0;
 }
+/*
+13
+1 2
+1 3
+1 13
+2 5
+3 4
+5 6
+5 7
+5 8
+8 12
+4 9
+4 10
+10 11
 
+7 2
+*/
+//ans=2

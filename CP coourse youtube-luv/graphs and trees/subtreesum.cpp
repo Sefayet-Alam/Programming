@@ -24,22 +24,30 @@ using namespace std;
 #define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 const ll maxN=1e5+10;//for graph
 #define M 10000
-
-
+/**
+given q qeries,q<=10^5
+in each query given v
+print the sum of  v,
+number if even numbers in subtree of v
+**/
 vector<ll>g[maxN];
-bool vis[maxN];
 
-
-void dfs(ll vertex){
+ll subtreesum[maxN];
+ll evencount[maxN];
+void dfs(ll vertex,ll par){
     //take action on vertex after entering the vertex
-    vis[vertex]=true;
-    //cout<<vertex<<endl;
+    if(vertex%2==0){evencount[vertex]++;}
+    subtreesum[vertex]+=vertex;//if each vertex's value is not equal to the vertex then take an arrray where arr[pos]=valur ans do subtreesum[vertex]+=arr[vertex];
     for(ll child:g[vertex]){
         //cout<<"par:"<<vertex<<" "<<"child:"<<child<<endl;
-            if(vis[child]) continue;
-        //take action on the node before entering the child
-        dfs(child);
-        //take action on the node after exiting the child
+        if(child==par) continue;
+
+        //take action on the node before entering the child node
+
+        dfs(child,vertex);
+        //take action on the node after exiting the child node
+        subtreesum[vertex]+=subtreesum[child];
+        evencount[vertex]+=evencount[child];
     }
     //take action on the vertex after exiting the node
 }
@@ -51,26 +59,45 @@ int main()
      t=1;
     //cin>>t;
    while(t--){
-    ll n,e;
-    cin>>n>>e;
+    ll n;
+    cin>>n;
     ll v1,v2;
-    for(ll i=0;i<e;i++){
+    for(ll i=0;i<n-1;i++){
+        //as each tree has n-1 edges so i=0 -> i<n-1
         cin>>v1>>v2;
         g[v1].push_back(v2);
         g[v2].push_back(v1);
     }
-    ll cnt=0;
+
+
+    dfs(1,0);
     for(ll i=1;i<=n;i++){
-        if(vis[i]) continue;
-        else{
-            dfs(i);
-            cnt++;
-        }
+
+         cout<<evencount[i]<<" "<<subtreesum[i]<<endl;
     }
-    cout<<cnt<<endl;
+   /*ll q;
+   cin>>q;
+   while(q--){
+    ll v;
+    cin>>v;
+    cout<<evencount[v]<<" "<<subtreesum[v]<<endl;
+   }*/
    }
-
-
     return 0;
 }
+/*
+13
+1 2
+1 3
+1 13
+2 5
+3 4
+5 6
+5 7
+5 8
+8 12
+4 9
+4 10
+10 11
 
+*/

@@ -22,55 +22,67 @@ using namespace std;
 #define tcas(i,t)             for(ll i=1;i<=t;i++)
 #define pcas(i)                printf("Case %lld: ",i)
 #define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-const ll maxN=1e5+10;//for graph
-#define M 10000
 
+const int N=1e5+10;
+const int M=1e9+7;
 
-vector<ll>g[maxN];
-bool vis[maxN];
+vector<ll> g[N];
+ll subtree_sum[N];
 
+void dfs(ll v,ll par){
 
-void dfs(ll vertex){
-    //take action on vertex after entering the vertex
-    vis[vertex]=true;
-    //cout<<vertex<<endl;
-    for(ll child:g[vertex]){
-        //cout<<"par:"<<vertex<<" "<<"child:"<<child<<endl;
-            if(vis[child]) continue;
-        //take action on the node before entering the child
-        dfs(child);
-        //take action on the node after exiting the child
+    for(ll child : g[v]){
+        if(child==par) continue;
+
+        dfs(child,v);
+        subtree_sum[v]+=subtree_sum[child];
     }
-    //take action on the vertex after exiting the node
 }
 int main()
 {
     fast;
      ll t;
      //ll tno=1;;
-     t=1;
+    t=1;
     //cin>>t;
-   while(t--){
-    ll n,e;
-    cin>>n>>e;
-    ll v1,v2;
-    for(ll i=0;i<e;i++){
-        cin>>v1>>v2;
-        g[v1].push_back(v2);
-        g[v2].push_back(v1);
+    while(t--){
+     ll n;
+     cin>>n;
+     ll x,y;
+    for(ll i=0;i<n-1;i++){
+        cin>>x>>y;
+        g[x].push_back(y);
+        g[y].push_back(x);
     }
-    ll cnt=0;
-    for(ll i=1;i<=n;i++){
-        if(vis[i]) continue;
-        else{
-            dfs(i);
-            cnt++;
-        }
-    }
-    cout<<cnt<<endl;
+   ll ans=0;
+   dfs(1,0);
+   for(ll i=2;i<=n;i++){
+    ll part1=subtree_sum[i];
+    ll part2=subtree_sum[1]-part1;
+    ans=max(ans,(part1*part2)%M);
+   }
+    cout<<ans<<endl;
+
    }
 
 
     return 0;
 }
+/*
+13
+1 2
+1 3
+1 13
+2 5
+3 4
+5 6
+5 7
+5 8
+8 12
+4 9
+4 10
+10 11
 
+*/
+
+//https://www.interviewbit.com/problems/delete-edge/

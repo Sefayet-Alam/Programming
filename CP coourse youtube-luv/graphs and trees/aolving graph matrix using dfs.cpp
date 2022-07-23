@@ -26,23 +26,27 @@ const ll maxN=1e5+10;//for graph
 #define M 10000
 
 
-vector<ll>g[maxN];
-bool vis[maxN];
 
 
-void dfs(ll vertex){
-    //take action on vertex after entering the vertex
-    vis[vertex]=true;
-    //cout<<vertex<<endl;
-    for(ll child:g[vertex]){
-        //cout<<"par:"<<vertex<<" "<<"child:"<<child<<endl;
-            if(vis[child]) continue;
-        //take action on the node before entering the child
-        dfs(child);
-        //take action on the node after exiting the child
-    }
-    //take action on the vertex after exiting the node
+void dfs(int i,int j,int initialColor,int newColor,vector<vector<int>>& image){
+    int n=image.size();
+    int m=image[0].size();
+    if(i<0 || j<0) return;
+    if(i>=n || j>=m) return;
+    if(image[i][j]!=initialColor) return;
+    image[i][j]=newColor;
+    dfs(i-1,j,initialColor,newColor,image);
+    dfs(i+1,j,initialColor,newColor,image);
+    dfs(i,j-1,initialColor,newColor,image);
+    dfs(i,j+1,initialColor,newColor,image);
+
 }
+vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+        int initialColor=image[sr][sc];
+
+        if(initialColor!=color) dfs(sr,sc,initialColor,color,image);
+        return image;
+    }
 int main()
 {
     fast;
@@ -51,23 +55,21 @@ int main()
      t=1;
     //cin>>t;
    while(t--){
-    ll n,e;
-    cin>>n>>e;
-    ll v1,v2;
-    for(ll i=0;i<e;i++){
+    int n,m;
+    cin>>n>>m;
+    int v1,v2;
+    for(int i=0;i<m;i++){
         cin>>v1>>v2;
         g[v1].push_back(v2);
         g[v2].push_back(v1);
     }
-    ll cnt=0;
-    for(ll i=1;i<=n;i++){
+    for(int i=1;i<=n;i++){
         if(vis[i]) continue;
         else{
             dfs(i);
-            cnt++;
+
         }
     }
-    cout<<cnt<<endl;
    }
 
 
