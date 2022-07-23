@@ -28,20 +28,25 @@ const ll maxN=1e5+10;//for graph
 
 vector<ll>g[maxN];
 bool vis[maxN];
+vector<vector<ll>>cc;
+vector<ll>currcc;
 
-
-void dfs(ll vertex){
+bool dfs(ll vertex,ll parent){
     //take action on vertex after entering the vertex
     vis[vertex]=true;
+    //currcc.pb(vertex);
     //cout<<vertex<<endl;
+    bool isLoopExists=false;
     for(ll child:g[vertex]){
+            if(vis[child] && child==parent){continue;}
         //cout<<"par:"<<vertex<<" "<<"child:"<<child<<endl;
-            if(vis[child]) continue;
+            if(vis[child]) return true;
         //take action on the node before entering the child
-        dfs(child);
+        isLoopExists|=dfs(child,vertex);
         //take action on the node after exiting the child
     }
     //take action on the vertex after exiting the node
+    return isLoopExists;
 }
 int main()
 {
@@ -60,14 +65,25 @@ int main()
         g[v2].push_back(v1);
     }
     ll cnt=0;
+    bool isLoopExists=false;
     for(ll i=1;i<=n;i++){
         if(vis[i]) continue;
         else{
-            dfs(i);
-            cnt++;
+            //currcc.clear();
+            if(dfs(i,0)){
+                isLoopExists=true;
+                break;
+            }
         }
     }
-    cout<<cnt<<endl;
+   /* cout<<cc.size()<<endl;
+    for(auto it:cc){
+        for(ll vertex:it){
+            cout<<vertex<<" ";
+        }
+        cout<<endl;
+    }*/
+    cout<<isLoopExists<<endl;
    }
 
 

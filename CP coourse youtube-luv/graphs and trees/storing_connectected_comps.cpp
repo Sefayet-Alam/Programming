@@ -28,11 +28,13 @@ const ll maxN=1e5+10;//for graph
 
 vector<ll>g[maxN];
 bool vis[maxN];
-
+vector<vector<ll>>cc;
+vector<ll>currcc;
 
 void dfs(ll vertex){
     //take action on vertex after entering the vertex
     vis[vertex]=true;
+    currcc.pb(vertex);
     //cout<<vertex<<endl;
     for(ll child:g[vertex]){
         //cout<<"par:"<<vertex<<" "<<"child:"<<child<<endl;
@@ -63,11 +65,20 @@ int main()
     for(ll i=1;i<=n;i++){
         if(vis[i]) continue;
         else{
+            currcc.clear();
             dfs(i);
+            cc.pb(currcc);
             cnt++;
         }
     }
-    cout<<cnt<<endl;
+    cout<<cc.size()<<endl;
+    for(auto it:cc){
+        for(ll vertex:it){
+            cout<<vertex<<" ";
+
+        }
+        cout<<endl;
+    }
    }
 
 

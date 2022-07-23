@@ -26,26 +26,70 @@ const ll maxN=1e5+10;//for graph
 #define M 10000
 
 
-class Solution {
-public:
-void dfs(int i,int j,int initialColor,int newColor,vector<vector<int>>& image){
-    int n=image.size();
-    int m=image[0].size();
-    if(i<0 || j<0) return;
-    if(i>=n || j>=m) return;
-    if(image[i][j]!=initialColor) return;
-    image[i][j]=newColor;
-    dfs(i-1,j,initialColor,newColor,image);
-    dfs(i+1,j,initialColor,newColor,image);
-    dfs(i,j-1,initialColor,newColor,image);
-    dfs(i,j+1,initialColor,newColor,image);
+vector<ll>g[maxN];
+bool vis[maxN];
+ll level[maxN];
 
-}
-vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
-        int initialColor=image[sr][sc];
+//bfs=breadth first search
+//according to level traversal
 
-        if(initialColor!=color) dfs(sr,sc,initialColor,color,image);
-        return image;
+
+void bfs(ll source){
+    queue<ll> q;
+    q.push(source);
+    vis[source]=1;
+    while(!q.empty()){
+        ll curr_v=q.front();
+        q.pop();
+        cout<<curr_v<<" ";
+        for(ll child: g[curr_v]){
+            if(!vis[child]){
+                q.push(child);
+                vis[child]=1;
+                level[child]=level[curr_v]+1;
+            }
+        }
     }
-};
-//https://leetcode.com/problems/flood-fill/
+    cout<<endl;
+}
+int main()
+{
+    fast;
+     ll t;
+     //ll tno=1;;
+     t=1;
+    //cin>>t;
+   while(t--){
+    ll n;
+    cin>>n;
+    ll v1,v2;
+    for(ll i=0;i<n-1;i++){
+        //n-1 edges
+        cin>>v1>>v2;
+        g[v1].push_back(v2);
+        g[v2].push_back(v1);
+    }
+    bfs(1);
+
+    for(ll i=1;i<=n;i++){
+        cout<<i<<": "<<level[i]<<endl;
+    }
+   }
+    return 0;
+}
+/*
+13
+1 2
+1 3
+1 13
+2 5
+5 6
+5 7
+5 8
+8 12
+3 4
+4 9
+4 10
+10 11
+
+*/
