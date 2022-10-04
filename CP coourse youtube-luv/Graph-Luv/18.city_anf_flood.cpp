@@ -22,12 +22,12 @@ using namespace std;
 #define tcas(i,t)             for(ll i=1;i<=t;i++)
 #define pcas(i)                printf("Case %lld: ",i)
 #define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-const ll N=510;//for graph
+const ll N=1e5+10;//for graph
 const ll INF=1e9+10;
 #define M 10000
 
 ///DSU
-ll dist[N][N];
+//ll dist[N][N];
 ll size[N];
 int parent[N];
 void make(int v){
@@ -83,4 +83,3 @@ int main()
 }
 //time comp:O(alpha(n))
 //reverse ackerman function  alpha(n)
-
