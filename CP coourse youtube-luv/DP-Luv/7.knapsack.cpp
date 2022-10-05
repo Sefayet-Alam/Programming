@@ -28,7 +28,7 @@ const ll maxN=1e5+10;
 
 ll wt[105],val[105];
 
-int dp[105][100005];
+ll dp[105][100005];
 /*In knapsack problem, we are given n items we have to choose some items and to choose those there should be a condition and we must choose optimally
 */
 /*bounded(general bag and stealing items prooblem or 0-1 knpsk) and unbounded knapsack(rod cutting)*/
