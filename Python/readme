@@ -2,4 +2,6 @@
 
 # **Resources for python:**
 
-https://docs.quantifiedcode.com/python-anti-patterns/performance/not_using_iteritems_to_iterate_large_dict.html
+1.https://docs.quantifiedcode.com/python-anti-patterns/performance/not_using_iteritems_to_iterate_large_dict.html
+
+2.https://learnpython.org/?fbclid=IwAR11_d8wml2vVTFW4KA4VuJJRGA3ozrL1g_xgPbEPUVIbnNYzlhVRdlSHo4
