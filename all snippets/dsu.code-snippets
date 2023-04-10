@@ -1,0 +1,39 @@
+{
+	"": {
+		"prefix": "dsu",
+		"body": [
+		  "int par[N];",
+		  "int sz[N];",
+		  "multiset<int> sizes;",
+		  "",
+		  "void make(int v){",
+		  "    par[v]=v;",
+		  "    sz[v]=1;",
+		  "    sizes.insert(1);",
+		  "}",
+		  "",
+		  "int find(int v){",
+		  "    if(v==par[v]) return v;",
+		  "    return par[v]=find(par[v]);",
+		  "}",
+		  "",
+		  "void merge(int a,int b){",
+		  "    sizes.erase(sizes.find(sz[a]));",
+		  "    sizes.erase(sizes.find(sz[b]));",
+		  "    sizes.insert(sz[a]+sz[b]);",
+		  "}",
+		  "",
+		  "void Union(int a,int b){",
+		  "    a=find(a);",
+		  "    b=find(b);",
+		  "    if(a!=b){",
+		  "        if(sz[a]<sz[b]) swap(a,b);",
+		  "        par[b]=a;",
+		  "        // merge(a,b);",
+		  "        sz[a]+=sz[b];",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

@@ -1,0 +1,11 @@
+{
+	"": {
+		"prefix": "comparator to sort descending",
+		"body": [
+		  "bool cmp(int a,int b){",
+		  "    return a>b;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

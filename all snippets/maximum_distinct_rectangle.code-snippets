@@ -1,0 +1,35 @@
+{
+	"Time complexity: O(N * logN) ": {
+		"prefix": "Count of maximum distinct Rectangles possible with given Perimeter",
+		"body": [
+		  "#include <iostream>",
+		  "using namespace std;",
+		  " ",
+		  "// Function to find the maximum number",
+		  "// of distinct rectangles with given perimeter",
+		  "void maxRectanglesPossible(int N)",
+		  "{",
+		  "    // Invalid case",
+		  "    if (N < 4 || N % 2 != 0) {",
+		  "        cout << -1 << \"\\n\";",
+		  "    }",
+		  "    else",
+		  "        // Number of distinct rectangles.",
+		  "        cout << (N / 2) - 1 << \"\\n\";",
+		  "}",
+		  " ",
+		  "// Driver Code",
+		  "int main()",
+		  "{",
+		  " ",
+		  "    // Perimeter of the rectangle.",
+		  "    int N = 20;",
+		  " ",
+		  "    maxRectanglesPossible(N);",
+		  " ",
+		  "    return 0;",
+		  "}"
+		],
+		"description": "Time complexity: O(N * logN) "
+	  }
+}

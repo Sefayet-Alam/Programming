@@ -1,0 +1,21 @@
+{
+	"": {
+		"prefix": "subset generate",
+		"body": [
+		  "vvl subsets;",
+		  "vl v;",
+		  "",
+		  "void generate(vl &subset,ll i){",
+		  "    if(i==v.size()){",
+		  "        subsets.push_back(subset);",
+		  "        return;",
+		  "    }",
+		  "    generate(subset,i+1);",
+		  "    subset.push_back(v[i]);",
+		  "    generate(subset,i+1);",
+		  "    subset.pop_back();",
+		  "}"
+		],
+		"description": ""
+	  }
+}

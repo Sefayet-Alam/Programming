@@ -1,0 +1,11 @@
+{
+	"": {
+		"prefix": "lowerToupper",
+		"body": [
+		  "char lowerToupper(char ch){",
+		  "    return (ch&'_');",
+		  "}"
+		],
+		"description": ""
+	  }
+}

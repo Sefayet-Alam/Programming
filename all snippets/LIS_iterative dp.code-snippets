@@ -1,0 +1,27 @@
+{
+	"LIS_iterative dp": {
+		"prefix": "LIS_iterative dp",
+		"body": [
+		  "ll dp[N];",
+		  "ll lisIterative(vector<ll> A) {",
+		  "    for (ll i = A.size() - 1;i >= 0;i--) {",
+		  "        ll ans = 0;",
+		  "        for (ll j = i + 1;j < A.size();j++) {",
+		  "            if (A[j] > A[i]) {",
+		  "                ans = max(ans, dp[j]);",
+		  "            }",
+		  "        }",
+		  "        dp[i] = ans + 1;",
+		  "    }",
+		  "    ",
+		  "    ll final_ans = 0;",
+		  "    for(int i = 0;i<A.size();i++) {",
+		  "      final_ans = max(final_ans, dp[i]);",
+		  "    }",
+		  "    ",
+		  "    return final_ans;",
+		  "}"
+		],
+		"description": "LIS_iterative dp"
+	  }
+}

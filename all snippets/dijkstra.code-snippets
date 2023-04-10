@@ -1,0 +1,32 @@
+{
+	"": {
+		"prefix": "dijkstra",
+		"body": [
+		  "vpll g[N];",
+		  "vl dist(N,LLONG_MAX);",
+		  "vl par(N,-1);",
+		  "",
+		  "void dijkstra(int source){",
+		  "    QP<pll> pq;",
+		  "    pq.push(mp(0,source));",
+		  "    dist[source]=0;",
+		  "    while(pq.size()){",
+		  "        ll v=pq.top().second;",
+		  "        ll v_dist=pq.top().first;",
+		  "        pq.pop();",
+		  "        if(dist[v]<v_dist) continue;",
+		  "        for(auto &child:g[v]){",
+		  "            ll child_v=child.first;",
+		  "            ll wt=child.second;",
+		  "            if(dist[v]+wt<dist[child_v]){",
+		  "                dist[child_v]=dist[v]+wt;",
+		  "                par[child_v]=v;",
+		  "                pq.push(mp(dist[child_v],child_v));",
+		  "            }",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

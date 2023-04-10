@@ -1,0 +1,20 @@
+{
+	"": {
+		"prefix": "compress vector",
+		"body": [
+		  "void compress(vl &v,ll n){",
+		  "    ll i;",
+		  "    set<pll> st;",
+		  "    fo(i,n){",
+		  "        st.insert({v[i],i});",
+		  "    }",
+		  "    i=1;",
+		  "    for(auto &it:st){",
+		  "        v[it.second]=i;",
+		  "        i++;",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

@@ -1,0 +1,28 @@
+{
+	"": {
+		"prefix": "bfs",
+		"body": [
+		  "bool vis[N];",
+		  "ll level[N];",
+		  "",
+		  "void bfs(ll source){",
+		  "    queue<ll> q;",
+		  "    q.push(source);",
+		  "    vis[source]=1;",
+		  "    level[source]=0;",
+		  "    while(!q.empty()){",
+		  "        ll cur_v=q.front();",
+		  "        q.pop();",
+		  "        for(ll child:g[cur_v]){",
+		  "            if(!vis[child]){",
+		  "                q.push(child);",
+		  "                vis[child]=1;",
+		  "                level[child]=1+level[cur_v];",
+		  "            }",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

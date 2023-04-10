@@ -1,0 +1,21 @@
+{
+	"returns 1 if prime else 0": {
+		"prefix": "__isprime",
+		"body": [
+		  "bool __isprime(ll x){",
+		  "    if(x<2) return 0;",
+		  "    if(x==2) return 1;",
+		  "    if(x % 2 == 0) return 0;",
+		  "    if(x==3) return 1;",
+		  "    if(x%3==0) return 0;",
+		  "    ll t=1;",
+		  "    for(ll i=5;i*i<=x;i+=2*(1+t)){",
+		  "        if(x%i==0) return 0;",
+		  "        t=1-t;",
+		  "    }",
+		  "    return 1;",
+		  "}"
+		],
+		"description": "returns 1 if prime else 0"
+	  }
+}

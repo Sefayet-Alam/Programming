@@ -1,0 +1,27 @@
+{
+	"maxmimum_common_divisor": {
+		"prefix": "maxmimum_common_divisor",
+		"body": [
+		  "",
+		  "//Given a value, ",
+		  "//x, we can check whether a pair has a GCD equal to x",
+		  " //by checking all the multiples of x",
+		  "// With that information, loop through all",
+		  "//possible values of x ",
+		  "//and check if it is a divisor to two or more values.",
+		  "ll maximum_common_divisor(vector<ll>&freq){",
+		  "    for(ll gcd=N;gcd>0;gcd--){",
+		  "        ll div=0;",
+		  "        for(ll j=gcd;j<=N;j+=gcd){",
+		  "            div+=freq[j];",
+		  "        }",
+		  "        if(div>=2){",
+		  "            return gcd;",
+		  "        }",
+		  "    }",
+		  "    return 1;",
+		  "}"
+		],
+		"description": "maxmimum_common_divisor"
+	  }
+}

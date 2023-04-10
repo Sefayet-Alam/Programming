@@ -1,0 +1,18 @@
+{
+	"knapsack_bitmask": {
+		"prefix": "knapsack_bitmask",
+		"body": [
+		  "//knapsack using bitmasking to find if there are subsets to reach weight W",
+		  "bitset<1000000001>can;//denotes if we can have  a subset such that the sum is i {can[i]}",
+		  "bool func(vector<ll>&vec,ll n,ll W){",
+		  "   can[0]=W;",
+		  "   for(ll i=0;i<n;i++){",
+		  "    can|=(can<<vec[i]);",
+		  "   }",
+		  "    if(can[W]) return true;",
+		  "    return false;",
+		  "}"
+		],
+		"description": "knapsack_bitmask"
+	  }
+}

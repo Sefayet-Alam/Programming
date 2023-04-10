@@ -1,0 +1,15 @@
+{
+	"": {
+		"prefix": "ncr",
+		"body": [
+		  "ll dp1[31][31];",
+		  "ll ncr(ll n,ll r){",
+		  "    if(r==1) return n;",
+		  "    if(n==r || r==0) return 1;",
+		  "    if(dp1[n][r]!=-1) return dp1[n][r];",
+		  "    return dp1[n][r]=ncr(n-1,r)+ncr(n-1,r-1);",
+		  "}"
+		],
+		"description": ""
+	  }
+}

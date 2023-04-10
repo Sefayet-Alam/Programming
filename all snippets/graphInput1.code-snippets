@@ -1,0 +1,16 @@
+{
+	"Adjacency List method input.": {
+		"prefix": "graphInputL",
+		"body": [
+		  "ll e;",
+		  "cin>>n>>e;",
+		  "fo(i,e){",
+		  "    int x,y;",
+		  "    cin>>x>>y;",
+		  "    g[x].pb(y);",
+		  "    g[y].pb(x);",
+		  "}"
+		],
+		"description": "Adjacency List method input."
+	  }
+}

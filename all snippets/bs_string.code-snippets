@@ -1,0 +1,24 @@
+{
+	"": {
+		"prefix": "bs (string)",
+		"body": [
+		  "string bs(string low,string high){",
+		  "    string mid;",
+		  "    while(compare(Subtraction(high,low),\"1\")!=-1){",
+		  "        mid=Division(Addition(high,low),2);",
+		  "        //cout<<mid<<\" \"<<fnc(mid)<<endl;",
+		  "        if(func(mid)){",
+		  "            low=Addition(mid,\"1\");",
+		  "        }",
+		  "        else{",
+		  "            high=mid;",
+		  "        }",
+		  "    }",
+		  "    return high;",
+		  "    // if(func(high)) return high;",
+		  "    // else return low;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

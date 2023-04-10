@@ -1,0 +1,15 @@
+{
+	"": {
+		"prefix": "treeInputL",
+		"body": [
+		  "cin>>n;",
+		  "fo(i,n-1){",
+		  "    int x=0,y=0;",
+		  "    cin>>x>>y;",
+		  "    g[x].pb(y);",
+		  "    g[y].pb(x);",
+		  "}"
+		],
+		"description": ""
+	  }
+}

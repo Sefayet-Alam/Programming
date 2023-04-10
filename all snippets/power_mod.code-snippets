@@ -1,0 +1,24 @@
+{
+	"uses fermats theorem": {
+		"prefix": "power_mod",
+		"body": [
+		  "ll power(ll a,ll b,ll mod)",
+		  "{   int res = 1;   ",
+		  "    a=a%mod; ",
+		  "    if (a==0) return 0; ",
+		  "    while (b>0)",
+		  "    {",
+		  "        if (b&1) res=(res*a)%mod;",
+		  "        b /=2;",
+		  "        a=(a*a)%mod;",
+		  "    }",
+		  "    return res;",
+		  "}",
+		  "//Fermat's Little Theorem tells us that  a^{p - 1} == 1mod{p}...",
+		  "// so we can calculate ",
+		  "//a^{b^c(mod{1e9 + 7 - 1)}(mod{1e9+7})",
+		  "//with modular exponentiation."
+		],
+		"description": "uses fermats theorem"
+	  }
+}

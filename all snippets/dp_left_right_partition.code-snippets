@@ -1,0 +1,30 @@
+{
+	"": {
+		"prefix": "dp left right capital small partition",
+		"body": [
+		  "ll dp[100000+5][5];",
+		  "string s;",
+		  "ll func(int i,bool flag=0){",
+		  "    if(i<0) return 0;",
+		  "    if(dp[i][flag]!=-1) return dp[i][flag];",
+		  "    ll ans=INT_MAX,ans2=INT_MAX;",
+		  "    if(!flag){",
+		  "        if(s[i]>96){",
+		  "            ans=1+func(i-1,1);",
+		  "            ans2=func(i-1,0);",
+		  "        }",
+		  "        else{",
+		  "            ans=1+func(i-1,0);",
+		  "            ans2=func(i-1,1);",
+		  "        }",
+		  "    }",
+		  "    else{",
+		  "        if(s[i]>96) ans=1+func(i-1,1);",
+		  "        else ans=func(i-1,1);",
+		  "    }",
+		  "    return dp[i][flag]= min(ans,ans2);",
+		  "}"
+		],
+		"description": "no need to contain both capital and small"
+	  }
+}

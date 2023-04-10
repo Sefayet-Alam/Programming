@@ -1,0 +1,42 @@
+{
+	"": {
+		"prefix": "grundy (each move make 1/2,1/3 or 1/6 of pile))",
+		"body": [
+		  "/* ",
+		  " Game Description-",
+		  " The game starts with a number- 'n' and the player to move",
+		  " divides the number- 'n' with the primes- 2, 3, 6 and then ",
+		  " takes the floor. If the integer becomes 0, it is removed. ",
+		  " The last player to move wins. Which player wins the game?",
+		  "",
+		  " A Dynamic Programming (Memoization-based) approach to ",
+		  " calculate Grundy Number and Mex",
+		  "*/",
+		  "",
+		  "ll dp[N];",
+		  "",
+		  "// A Function to calculate Mex of all the values in that set",
+		  "// This function remains same ",
+		  "ll calculateMex (unordered_set<ll> &st){",
+		  "    ll Mex = 0;",
+		  "    while(st.count(Mex)) Mex++;",
+		  "    return (Mex);",
+		  "}",
+		  "",
+		  "// A function to Compute Grundy Number of 'n'",
+		  "// Only this function varies according to the game",
+		  "ll calculateGrundy (ll n){",
+		  "    if (n == 0) return 0;",
+		  "    ll &ret=dp[n];",
+		  "    if(ret!=-1) return ret;",
+		  "    unordered_set<ll> Set; // A Hash Table",
+		  "    Set.insert (calculateGrundy (n/2));",
+		  "    Set.insert (calculateGrundy (n/3));",
+		  "    Set.insert (calculateGrundy (n/6));",
+		  "    // Store the result",
+		  "    return ret = calculateMex (Set);",
+		  "}"
+		],
+		"description": ""
+	  }
+}

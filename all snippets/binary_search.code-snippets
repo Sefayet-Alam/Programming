@@ -1,0 +1,27 @@
+{
+	"": {
+		"prefix": "binary search",
+		"body": [
+		  "ll func(ll pos){",
+		  "",
+		  "}",
+		  "",
+		  "ll bs(ll low,ll high){",
+		  "    ll mid;",
+		  "    while(high-low>=2){",
+		  "        mid=(high+low)>>1;",
+		  "        //cout<<mid<<\" \"<<func(mid)<<endl;",
+		  "        if(func(mid)){",
+		  "            low=mid;",
+		  "        }",
+		  "        else{",
+		  "            high=mid-1;",
+		  "        }",
+		  "    }",
+		  "    if(func(high)) return high;",
+		  "    else return low;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

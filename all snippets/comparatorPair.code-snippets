@@ -1,0 +1,12 @@
+{
+	"": {
+		"prefix": "comparator for pair",
+		"body": [
+		  "bool cmp(pair<ll,ll> a,pair<ll,ll> b){",
+		  "    if(a.second!=b.second) return a.second>b.second;",
+		  "    return a.first<b.first;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

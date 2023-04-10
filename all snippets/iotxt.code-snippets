@@ -1,0 +1,10 @@
+{
+	"": {
+		"prefix": "io.txt",
+		"body": [
+		  "freopen(\"input.txt\",\"r\",stdin);",
+		  "freopen(\"output.txt\",\"w\",stdout);"
+		],
+		"description": ""
+	  }
+}

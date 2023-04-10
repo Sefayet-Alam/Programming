@@ -1,0 +1,23 @@
+{
+	"": {
+		"prefix": "generate combination",
+		"body": [
+		  "vl people;",
+		  "vl combination;",
+		  "vvl combinations;",
+		  "",
+		  "void go(ll offset, ll k) {",
+		  "    if (k == 0) {",
+		  "        combinations.pb(combination);",
+		  "        return;",
+		  "    }",
+		  "    for (ll i = offset; i <= people.size() - k; ++i) {",
+		  "        combination.push_back(people[i]);",
+		  "        go(i+1, k-1);",
+		  "        combination.pop_back();",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

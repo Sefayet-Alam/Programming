@@ -1,0 +1,41 @@
+{
+	"short templete": {
+		"prefix": "mytemps",
+		"body": [
+		  "#include<bits/stdc++.h>",
+		  "using namespace std;",
+		  "#define endl '\\n'",
+		  "#define fo(i,n) for(i=0;i<n;i++)",
+		  "#define Fo(i,k,n) for(i=k;k<n?i<n:i>n;k<n?i+=1:i-=1)",
+		  "#define deb(x) cout << #x << \"=\" << x << endl",
+		  "#define deb2(x, y) cout << #x << \"=\" << x << \",\" << #y << \"=\" << y << endl",
+		  "#define all(x) x.begin(), x.end()",
+		  "#define sortall(x) sort(all(x))",
+		  "#define PI 3.1415926535897932384626",
+		  "#define fast_IO ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0)",
+		  "typedef long long ll;",
+		  "typedef unsigned long long ull;",
+		  "const double EPS= 1e-9;",
+		  "const int N = 1e6;",
+		  "//=======================",
+		  "",
+		  "void solve() {",
+		  "    int n=0,i=0,j=0;",
+		  "    $4",
+		  "}",
+		  "",
+		  "int main() {",
+		  "    fast_IO;",
+		  "    int t = 1;",
+		  "    $1cin >> t;",
+		  "    while(t--) {",
+		  "        $2",
+		  "        solve($3);",
+		  "    }",
+		  "",
+		  "    return 0;",
+		  "}"
+		],
+		"description": "short templete"
+	  }
+}

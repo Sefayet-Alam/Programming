@@ -1,0 +1,22 @@
+{
+	"state of dp ind,val": {
+		"prefix": "dp knapsack 2",
+		"body": [
+		  "int wt[105], val[105];",
+		  "long long dp[105][100005];",
+		  "long long func(int ind, int val_left){",
+		  "    if(val_left==0) return 0;",
+		  "    if(ind<0) return 1e15;",
+		  "    if(dp[ind][val_left]!=-1) return dp[ind][val_left];",
+		  "    //Dont choose item at ind",
+		  "    long long ans=func(ind-1,val_left);",
+		  "    //choose item ind",
+		  "    if(val_left-val[ind]>=0){",
+		  "        ans=min(ans,func(ind-1,val_left-val[ind])+wt[ind]);",
+		  "    }",
+		  "    return dp[ind][val_left]=ans;",
+		  "}"
+		],
+		"description": "state of dp ind,val"
+	  }
+}

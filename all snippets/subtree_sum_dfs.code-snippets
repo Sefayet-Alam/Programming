@@ -1,0 +1,30 @@
+{
+	"pre computation using dfs": {
+		"prefix": "subtree sum dfs",
+		"body": [
+		  "int subtree_sum[N];",
+		  "",
+		  "void dfs(int vertex,int par=0){",
+		  "    /*",
+		  "    take action on vertex after entering the vertex",
+		  "    */",
+		  "    subtree_sum[vertex]+=vertex;",
+		  "    for(int child: g[vertex]){",
+		  "        /*",
+		  "        take action on child before entering the child node",
+		  "        */",
+		  "        if(child==par) continue;",
+		  "        dfs(child,vertex);",
+		  "        /*",
+		  "        take action on child after entering the child node",
+		  "        */",
+		  "        subtree_sum[vertex]+=subtree_sum[child];",
+		  "    }",
+		  "    /*",
+		  "    take action on vertex before exiting the vertex",
+		  "    */",
+		  "}"
+		],
+		"description": "pre computation using dfs"
+	  }
+}

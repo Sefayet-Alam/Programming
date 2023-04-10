@@ -1,0 +1,43 @@
+{
+	"": {
+		"prefix": "subarray cnt when xor=sum",
+		"body": [
+		  "// Function to count the number",
+		  "// of subarrays such that Xor of",
+		  "// all the elements of that subarray",
+		  "// is equal to sum of the elements",
+		  "ll calc(vl arr){",
+		  "    ll n=SZ(arr);",
+		  "    // Maintain two pointers",
+		  "    // left and right",
+		  "    ll right = 0, ans = 0,",
+		  "       num = 0;",
+		  " ",
+		  "    // Iterating through the array",
+		  "    for (ll left = 0; left < n; left++) {",
+		  " ",
+		  "        // Calculate the window",
+		  "        // where the above condition",
+		  "        // is satisfied",
+		  "        while (right < n&& num + arr[right]== (num ^ arr[right])) {",
+		  "            num += arr[right];",
+		  "            right++;",
+		  "        }",
+		  " ",
+		  "        // Count will be (right-left)",
+		  "        ans += right - left;",
+		  "        if (left == right)",
+		  "            right++;",
+		  " ",
+		  "        // Remove the previous element",
+		  "        // as it is already included",
+		  "        else",
+		  "            num -= arr[left];",
+		  "    }",
+		  " ",
+		  "    return ans;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

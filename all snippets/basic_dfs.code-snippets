@@ -1,0 +1,28 @@
+{
+	"": {
+		"prefix": "dfs graph",
+		"body": [
+		  "bool vis[N];",
+		  "void dfs(ll vertex){",
+		  "    /*",
+		  "    take action on vertex after entering the vertex",
+		  "    */",
+		  "    vis[vertex]=true;",
+		  "    for(ll child: g[vertex]){",
+		  "        /*",
+		  "        take action on child before entering the child node",
+		  "        */",
+		  "        if(vis[child]) continue;",
+		  "        dfs(child);",
+		  "        /*",
+		  "        take action on child after entering the child node",
+		  "        */",
+		  "    }",
+		  "    /*",
+		  "    take action on vertex before exiting the vertex",
+		  "    */",
+		  "}"
+		],
+		"description": "basic dfs function"
+	  }
+}

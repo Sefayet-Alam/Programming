@@ -1,0 +1,21 @@
+{
+	"": {
+		"prefix": "dp lcs",
+		"body": [
+		  "string s1,s2;",
+		  "int dp[1005][1005];",
+		  "int lcs(int i,int j){",
+		  "    if(i<0 || j<0) return 0;",
+		  "    if(dp[i][j]!=-1) return dp[i][j];",
+		  "    //remove 1 char from s1",
+		  "    int ans=lcs(i-1,j);",
+		  "    //remove 1 char from s2",
+		  "    ans=max(ans,lcs(i,j-1));",
+		  "    //remove 1 char from s1 and s2",
+		  "    ans=max(ans,lcs(i-1,j-1))+(s1[i]==s2[j]);",
+		  "    return dp[i][j]=ans;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

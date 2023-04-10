@@ -1,0 +1,17 @@
+{
+	"complexity O(max(n,max element of vector))": {
+		"prefix": "count sort",
+		"body": [
+		  "void countSort(vl &v){",
+		  "    ll i=0,n=v.size(),mx=*max_element(all(v));",
+		  "    vl cnt(mx+1,0);",
+		  "    vl sorted(n);",
+		  "    fo(i,n) cnt[v[i]]++;",
+		  "    Fo(i,1,cnt.size()) cnt[i]+=cnt[i-1];",
+		  "    Fo(i,n-1,-1) sorted[--cnt[v[i]]]=v[i];  ",
+		  "    fo(i,v.size()) v[i]=sorted[i];",
+		  "}"
+		],
+		"description": "complexity O(max(n,max element of vector))"
+	  }
+}

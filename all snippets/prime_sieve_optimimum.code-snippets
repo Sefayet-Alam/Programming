@@ -1,0 +1,26 @@
+{
+	"prime_sieve_optimum": {
+		"prefix": "prime_sieve_optimum",
+		"body": [
+		  "vector<bool> Primes(N,1);",
+		  "vector<ll>primenos;",
+		  "void SieveOfEratosthenes(ll n)",
+		  "{",
+		  "    Primes[1]=0;",
+		  "    for (ll i=2;i*i<=n;i++) {",
+		  "    if(Primes[i]==1){     ",
+		  "    for(ll j=i*i;j<=n;j+=i)",
+		  "        Primes[j]=0;",
+		  "        }",
+		  "    }",
+		  "    for(ll i=1;i<n;i++){",
+		  "        if(Primes[i]){",
+		  "            primenos.push_back(i);",
+		  "        }",
+		  "    }",
+		  "}",
+		  ""
+		],
+		"description": "prime_sieve_optimum"
+	  }
+}

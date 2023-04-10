@@ -1,0 +1,23 @@
+{
+	"mod_inverse": {
+		"prefix": "mod_inverse",
+		"body": [
+		  "// Function to find modular inverse of a under modulo M a^-1 ≅ a^(M-2) (mod M)",
+		  "// Assumption: M is prime",
+		  "void modInverse(int A, int M)",
+		  "{",
+		  "    int g = gcd(A, M);",
+		  "    if (g != 1)",
+		  "        cout << \"Inverse doesn't exist\";",
+		  "    else {",
+		  "        // If a and m are relatively prime, then modulo",
+		  "        // inverse is a^(m-2) mode m",
+		  "        cout << \"Modular multiplicative inverse is \"",
+		  "             << power(A, M - 2, M);",
+		  "    }",
+		  "}",
+		  " "
+		],
+		"description": "mod_inverse"
+	  }
+}
