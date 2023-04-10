@@ -1,0 +1,26 @@
+{
+	"": {
+		"prefix": "floyd warshall",
+		"body": [
+		  "ll dp[N][N];",
+		  "const int INF=1e9;",
+		  "",
+		  "void floyd_warshall(int n){",
+		  "    ll i,j,k;",
+		  "    fo(i,n+1){",
+		  "        dp[i][i]=0;",
+		  "    }",
+		  "    Fo(k,1,n+1){",
+		  "        Fo(i,1,n+1){",
+		  "            Fo(j,1,n+1){",
+		  "                if(dp[i][k]!=INF && dp[k][j]!=INF){",
+		  "                    dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]);",
+		  "                }",
+		  "            }",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

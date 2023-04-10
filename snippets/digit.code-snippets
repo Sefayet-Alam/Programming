@@ -1,0 +1,12 @@
+{
+	"counts the number of digits in a number": {
+		"prefix": "digit",
+		"body": [
+		  "int digit(int n){",
+		  "    string s=to_string(n);",
+		  "    return (s.length());",
+		  "}"
+		],
+		"description": "counts the number of digits in a number"
+	  }
+}

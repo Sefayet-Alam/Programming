@@ -1,0 +1,21 @@
+{
+	"find_the_best_two_workers": {
+		"prefix": "find_the_best_two_workers",
+		"body": [
+		  "",
+		  "//given a set of workers availability (interval) find two workers that are best",
+		  "//for the job maximize the number of days when both these workers are available.",
+		  "bitset<365> x[MAX_N];",
+		  "//maxN=number of workers",
+		  "int intersection(int i, int j) {",
+		  "	return (x[i] & x[j]).count();",
+		  "}",
+		  "for(i->n){",
+		  "    for(j->n){",
+		  "        intersection(i,j);",
+		  "    }",
+		  "}"
+		],
+		"description": "find_the_best_two_workers"
+	  }
+}

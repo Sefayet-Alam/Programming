@@ -1,0 +1,25 @@
+{
+	"": {
+		"prefix": "bin_to_roman",
+		"body": [
+		  "string Bin_to_Roman(ll n){",
+		  "    string s=\"\";",
+		  "    while(n>=1000) s.pb('M'),n-=1000;",
+		  "    while(n>=900) s.pb('C'),s.pb('M'),n-=900;",
+		  "    while(n>=500) s.pb('D'),n-=500;",
+		  "    while(n>=400) s.pb('C'),s.pb('D'),n-=400;",
+		  "    while(n>=100) s.pb('C'),n-=100;",
+		  "    while(n>=90) s.pb('X'),s.pb('C'),n-=90;",
+		  "    while(n>=50) s.pb('L'),n-=50;",
+		  "    while(n>=40) s.pb('X'),s.pb('L'),n-=40;",
+		  "    while(n>=10) s.pb('X'),n-=10;",
+		  "    while(n>=9) s.pb('I'),s.pb('X'),n-=9;",
+		  "    while(n>=5) s.pb('V'),n-=5;",
+		  "    while(n>=4) s.pb('I'),s.pb('V'),n-=4;",
+		  "    while(n) s.pb('I'),n--;",
+		  "    return s;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

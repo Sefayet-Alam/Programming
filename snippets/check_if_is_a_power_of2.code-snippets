@@ -1,0 +1,11 @@
+{
+	"check_if_is_a_powerof2": {
+		"prefix": "check_if_is_a_powerof2",
+		"body": [
+		  " bool check_power_of_two(int num){",
+		  "      return n && !(n&(n-1));",
+		  "   }"
+		],
+		"description": "check_if_is_a_powerof2"
+	  }
+}

@@ -1,0 +1,20 @@
+{
+	"": {
+		"prefix": "2D prefix sum",
+		"body": [
+		  "ll arr[N][N];",
+		  "ll pfsum[N][N];",
+		  "void buildPS(){",
+		  "    for(int i=1;i<N;i++){",
+		  "        for(int j=1;j<N;j++){",
+		  "            pfsum[i][j]=arr[i][j]+pfsum[i-1][j]+pfsum[i][j-1]-pfsum[i-1][j-1];",
+		  "        }",
+		  "    }",
+		  "}",
+		  "ll getSum(ll a,ll b,ll c,ll d){",
+		  "    return pfsum[c][d]-pfsum[a-1][d]-pfsum[c][b-1]+pfsum[a-1][b-1];",
+		  "}"
+		],
+		"description": ""
+	  }
+}

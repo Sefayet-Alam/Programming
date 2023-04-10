@@ -1,0 +1,38 @@
+{
+	"no_of_coprimes_inArray": {
+		"prefix": "no_of_coprimes_inArray",
+		"body": [
+		  "ll no_of_coprimes_inArray(vector<ll>&vec,ll n){",
+		  "     divisor_store();",
+		  "    vector<ll>ValuesDivisibleBy(N);",
+		  "      vector<ll>primeDivisorOf(N);",
+		  "      for(ll i=0;i<n;i++){",
+		  "        for(ll mask=1;mask<(1<<divisors[vec[i]].size());mask++){",
+		  "            ll combination=1;",
+		  "            ll primdiv=0;",
+		  "            for(ll pos=0;pos<divisors[vec[i]].size();pos++){",
+		  "                if((1<<pos)&mask){",
+		  "                combination*=divisors[vec[i]][pos];",
+		  "                primdiv++;",
+		  "                }",
+		  "            }",
+		  "            ValuesDivisibleBy[combination]++;",
+		  "            primeDivisorOf[combination]=primdiv;",
+		  "        }",
+		  "      }",
+		  "        ll totnoofPairs=(n*(n-1))/2;",
+		  "        ll validpairs=0;",
+		  "        for(ll i=0;i<N;i++){",
+		  "            if(primeDivisorOf[i]%2){",
+		  "                validpairs+=((ValuesDivisibleBy[i])*(ValuesDivisibleBy[i]-1))/2;",
+		  "            }",
+		  "            else{",
+		  "                 validpairs-=((ValuesDivisibleBy[i])*(ValuesDivisibleBy[i]-1))/2;",
+		  "            }",
+		  "        }",
+		  "        return totnoofPairs-validpairs;",
+		  "}"
+		],
+		"description": "no_of_coprimes_inArray"
+	  }
+}

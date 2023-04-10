@@ -1,0 +1,29 @@
+{
+	"": {
+		"prefix": "search prefix BIT ",
+		"body": [
+		  "// This is equivalent to calculating lower_bound on prefix sums array",
+		  "// LOGN = log(N)",
+		  "",
+		  "int bit[N]; // BIT array",
+		  "",
+		  "int bit_search(int v)",
+		  "{",
+		  "    int sum = 0;",
+		  "    int pos = 0;",
+		  " ",
+		  "    for(int i=LOGN; i>=0; i--)",
+		  "    {",
+		  "        if(pos + (1 << i) < N and sum + bit[pos + (1 << i)] < v)",
+		  "        {",
+		  "            sum += bit[pos + (1 << i)];",
+		  "            pos += (1 << i);",
+		  "        }",
+		  "    }",
+		  "",
+		  "    return pos + 1; // +1 because 'pos' will have position of largest value less than 'v'",
+		  "}"
+		],
+		"description": ""
+	  }
+}

@@ -1,0 +1,11 @@
+{
+	"": {
+		"prefix": "toggle bit",
+		"body": [
+		  "int toggle(int x,int i){",
+		  "    return (x^(1<<i));",
+		  "}"
+		],
+		"description": ""
+	  }
+}

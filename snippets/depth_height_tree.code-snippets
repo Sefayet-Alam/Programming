@@ -1,0 +1,17 @@
+{
+	"": {
+		"prefix": "depth_height_tree",
+		"body": [
+		  "int depth[N],height[N];",
+		  "void dfs(int vertex,int par=0){",
+		  "    for(int child: g[vertex]){",
+		  "        if(child==par) continue;",
+		  "        depth[child]=depth[vertex]+1;",
+		  "        dfs(child,vertex);",
+		  "        height[vertex]=max(height[vertex],height[child]+1);",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

@@ -1,0 +1,41 @@
+{
+	"": {
+		"prefix": "calculate grundy",
+		"body": [
+		  "/*  A Dynamic Programming (Memoization-based) approach to ",
+		  " calculate Grundy Number of a Game",
+		  " Game Description-",
+		  " Just like a one-pile version of Nim, the game starts with",
+		  " a pile of n stones, and the player to move may take any ",
+		  " positive number of stones.",
+		  " The last player to move wins. Which player wins the game? */",
+		  "",
+		  "ll dp[N];",
+		  "",
+		  "// A Function to calculate Mex of all the values in that set",
+		  "// This function remains same ",
+		  "ll calculateMex(unordered_set<ll>& st){",
+		  "    ll mex = 0;",
+		  "    while (st.count(mex)) mex++;",
+		  "    return (mex);",
+		  "}",
+		  "",
+		  "// A function to Compute Grundy Number of 'n'",
+		  "// Only this function varies according to the game",
+		  "ll calculateGrundy(ll n){",
+		  "    if(n==0) return 0;",
+		  "",
+		  "    ll &ret=dp[n];",
+		  "",
+		  "    if(ret!=-1) return ret;",
+		  "",
+		  "    unordered_set<ll> st;",
+		  "",
+		  "    for (ll i=0;i<=n-1;i++) st.insert(calculateGrundy(i));",
+		  "",
+		  "    return ret=calculateMex (st);",
+		  "}"
+		],
+		"description": ""
+	  }
+}

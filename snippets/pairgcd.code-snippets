@@ -1,0 +1,27 @@
+{
+	"": {
+		"prefix": "number of pair having gcd k",
+		"body": [
+		  "vl dp;",
+		  "",
+		  "/*",
+		  " a replacement of Mobius inversion",
+		  "*/",
+		  "void func(ll n){",
+		  "    dp.resize(n+1);",
+		  "    fill(all(dp),0);",
+		  "    // traverse from right ",
+		  "    for (int i = n; i>=1; i--){",
+		  "        ll val = n/i;  // Total multiples of i",
+		  "        val = (val*(val-1))/2; // choose two out of these",
+		  "        dp[i] =val;",
+		  "        //remove every pair whose gcd is multiple of i (2*i,3*i,.....)(except i )",
+		  "        for(int j =2*i ;j<=n;j+=i){",
+		  "            dp[i] -= dp[j];",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

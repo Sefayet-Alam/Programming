@@ -1,0 +1,22 @@
+{
+	"check sum of array two element is given number": {
+		"prefix": "pairsum",
+		"body": [
+		  "bool pairsum(int ar[],int n,int k){",
+		  "    int L=0,R=n-1;",
+		  "    while(L<R){",
+		  "        if(ar[L]+ar[R]==k){",
+		  "            cout<<L<<\" \"<<R<<endl;",
+		  "            return true;",
+		  "        }",
+		  "        else if(ar[L]+ar[R] >k)",
+		  "            R--;",
+		  "        else",
+		  "            L++;",
+		  "    }",
+		  "    return false;",
+		  "}"
+		],
+		"description": "check sum of array two element is given number"
+	  }
+}

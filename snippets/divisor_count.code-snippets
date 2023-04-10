@@ -1,0 +1,15 @@
+{
+	"divisor_count": {
+		"prefix": "divisor_count",
+		"body": [
+		  "void divisorcount(ll n){",
+		  "    for(ll i=1;i<n;i++){",
+		  "        for(ll j=i;j<n;j+=i){",
+		  "            divs[j]++;",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": "divisor_count"
+	  }
+}

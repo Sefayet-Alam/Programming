@@ -1,0 +1,21 @@
+{
+	"prime_sieve_class": {
+		"prefix": "prime_sieve_class",
+		"body": [
+		  "vector<bool> Primes(N,1);",
+		  "",
+		  "void SieveOfEratosthenes(int n)",
+		  "{",
+		  "    Primes[1]=0;",
+		  "    Primes[0]=0;",
+		  "    for(ll i=4;i<=n;i+=2) Primes[i]=false;",
+		  "    for (ll i=3;i*i<=n;i+=2) {",
+		  "    if(Primes[i]==1){    ",
+		  "        for(ll j=i*i;j<=n;j+=2*i) Primes[j]=0;",
+		  "      }",
+		  "    }",
+		  "}"
+		],
+		"description": "prime_sieve_class"
+	  }
+}

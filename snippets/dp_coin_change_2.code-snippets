@@ -1,0 +1,32 @@
+{
+	"": {
+		"prefix": "dp coin change 2(iterative)",
+		"body": [
+		  "ll t=0,n;",
+		  "ll dp[10005];",
+		  "ll coins[105];",
+		  "",
+		  "ll func(ll amount){",
+		  "    dp[0]=1;",
+		  "    ll i,j;",
+		  "    fo(i,n){",
+		  "        for(j=coins[i];j<=amount;j++){",
+		  "            dp[j]=(dp[j]+dp[j-coins[i]])%M;",
+		  "        }",
+		  "    }",
+		  "    return dp[amount];",
+		  "}",
+		  "",
+		  "void solve() {",
+		  "    ll a=0,b=0,i=0,j=0,k=0,l=0,r=0,ans=0,temp=0,cnt=0,sum=0;",
+		  "    string s,s1,s2,s3;",
+		  "    cin>>n>>k;",
+		  "    fo(i,n) cin>>coins[i];",
+		  "    fo(i,k+2) dp[i]=0;",
+		  "    ans= func(k);",
+		  "    cout<<\"Case \"<<++t<<\": \"<<ans<<nn;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

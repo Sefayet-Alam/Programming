@@ -1,0 +1,19 @@
+{
+	"dp fibonacci": {
+		"prefix": "dp fibonacci",
+		"body": [
+		  "ll memo[N];",
+		  "",
+		  "ll fibo(ll n) {",
+		  "    memo[0] = 0;",
+		  "    memo[1] = 1;",
+		  "    for(ll i = 2;i <= n;i++) {",
+		  "        memo[n] = memo[i - 1] + memo[i - 2];",
+		  "    }",
+		  "    ",
+		  "    return memo[n];",
+		  "}"
+		],
+		"description": "dp fibonacci"
+	  }
+}

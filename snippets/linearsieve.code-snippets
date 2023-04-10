@@ -1,0 +1,25 @@
+{
+	"": {
+		"prefix": "sieve linear",
+		"body": [
+		  "vi prime(N+1);",
+		  "vi primes;",
+		  "",
+		  "void sieve(){",
+		  "    for (int i=2; i <= N; ++i) {",
+		  "        if (prime[i] == 0) {",
+		  "            prime[i] = i;",
+		  "            primes.push_back(i);",
+		  "        }",
+		  "        for (int j = 0; i * primes[j] <= N; ++j) {",
+		  "            prime[i * primes[j]] = primes[j];",
+		  "            if (primes[j] == prime[i]) {",
+		  "                break;",
+		  "            }",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

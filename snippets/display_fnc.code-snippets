@@ -1,0 +1,18 @@
+{
+	"functions of linked list": {
+		"prefix": "display_fnc",
+		"body": [
+		  "template <typename T>",
+		  "void display (T const& coll)",
+		  "{",
+		  "    typename T::const_iterator pos;  // iterator to iterate over coll",
+		  "    typename T::const_iterator end(coll.end());  // end position",
+		  "    for (pos=coll.begin(); pos!=end; ++pos) {",
+		  "        cout << *pos << ' ';",
+		  "    }",
+		  "    cout << endl;",
+		  "}"
+		],
+		"description": "functions of linked list"
+	  }
+}

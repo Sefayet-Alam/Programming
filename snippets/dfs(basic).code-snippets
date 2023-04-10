@@ -1,0 +1,29 @@
+{
+	"": {
+		"prefix": "dfs(basic)",
+		"body": [
+		  "const ll maxN=1e5+10;//for graph",
+		  "#define M 10000",
+		  "",
+		  "",
+		  "vector<ll>g[maxN];",
+		  "bool vis[maxN];",
+		  "",
+		  "",
+		  "void dfs(ll vertex){",
+		  "    //take action on vertex after entering the vertex",
+		  "    vis[vertex]=true;",
+		  "    cout<<vertex<<endl;",
+		  "    for(ll child:g[vertex]){",
+		  "        cout<<\"par:\"<<vertex<<\" \"<<\"child:\"<<child<<endl;",
+		  "            if(vis[child]) continue;",
+		  "        //take action on the node before entering the child",
+		  "        dfs(child);",
+		  "        //take action on the node after exiting the child",
+		  "    }",
+		  "    //take action on the vertex after exiting the node",
+		  "}"
+		],
+		"description": ""
+	  }
+}

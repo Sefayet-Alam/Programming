@@ -1,0 +1,36 @@
+{
+	"LIS_Printpath": {
+		"prefix": "dp LIS_Printpath",
+		"body": [
+		  "vector<ll> lis(vector<ll> const& a) {",
+		  "    int n = a.size();",
+		  "    vector<ll> d(n, 1), p(n, -1);",
+		  "    for (ll i = 0; i < n; i++) {",
+		  "        for (ll j = 0; j < i; j++) {",
+		  "            if (a[j] < a[i] && d[i] < d[j] + 1) {",
+		  "                d[i] = d[j] + 1;",
+		  "                p[i] = j;",
+		  "            }",
+		  "        }",
+		  "    }",
+		  "",
+		  "    ll ans = d[0], pos = 0;",
+		  "    for (int i = 1; i < n; i++) {",
+		  "        if (d[i] > ans) {",
+		  "            ans = d[i];",
+		  "            pos = i;",
+		  "        }",
+		  "    }",
+		  "",
+		  "    vector<ll> subseq;",
+		  "    while (pos != -1) {",
+		  "        subseq.push_back(a[pos]);",
+		  "        pos = p[pos];",
+		  "    }",
+		  "    reverse(subseq.begin(), subseq.end());",
+		  "    return subseq;",
+		  "}//O(n*n)"
+		],
+		"description": "LIS_Printpath"
+	  }
+}

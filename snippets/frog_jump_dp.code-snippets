@@ -1,0 +1,23 @@
+{
+	"": {
+		"prefix": "frog jump dp",
+		"body": [
+		  "int h[N];",
+		  "int dp[N];",
+		  "int k=0;",
+		  "",
+		  "int func(int n){",
+		  "    if(n==0) return 0;",
+		  "    int cost=INT_MAX;",
+		  "    if(dp[n]!=-1) return dp[n];",
+		  "    for(int i=1;i<=k;i++){",
+		  "        if(n-i>=0){",
+		  "            cost=min(cost,func(n-i)+abs(h[n]-h[n-i]));",
+		  "        }",
+		  "    }",
+		  "    return dp[n]=cost;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

@@ -1,0 +1,12 @@
+{
+	"print_binary": {
+		"prefix": "print_binary",
+		"body": [
+		  "void pr_binary(int num){",
+		  "    for(int i=10;i>=0;i--) cout<<((num>>i)&1);",
+		  "    cout<<endl;",
+		  "}"
+		],
+		"description": "print_binary"
+	  }
+}

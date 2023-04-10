@@ -1,0 +1,11 @@
+{
+	"": {
+		"prefix": "setBit",
+		"body": [
+		  "int setBit(int x,int i){",
+		  "    return (x|(1<<i));",
+		  "}"
+		],
+		"description": ""
+	  }
+}

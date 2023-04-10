@@ -1,0 +1,21 @@
+{
+	"SlidingWindow": {
+		"prefix": "SlidingWindow",
+		"body": [
+		  "vector<ll> maxSlidingWindow(vector<ll> &nums, ll k) {",
+		  "	multiset<ll> s;",
+		  "	vector<ll> ret;",
+		  "	for (ll i = 0; i < k; i++) { s.insert(nums[i]); }",
+		  "	for (ll i = k; i < nums.size(); i++) {",
+		  "		ret.push_back(*s.rbegin());",
+		  "		s.erase(s.find(nums[i - k]));",
+		  "		s.insert(nums[i]);",
+		  "	}",
+		  "	ret.push_back(*s.rbegin());",
+		  "	return ret;",
+		  "}",
+		  ""
+		],
+		"description": "SlidingWindow"
+	  }
+}

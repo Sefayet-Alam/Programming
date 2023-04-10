@@ -1,0 +1,11 @@
+{
+	"": {
+		"prefix": "upperTolower",
+		"body": [
+		  "char upperTolower(char ch){",
+		  "    return (ch|' ');",
+		  "}"
+		],
+		"description": ""
+	  }
+}

@@ -1,0 +1,31 @@
+{
+	"longestunique_substr": {
+		"prefix": "longestunique_substr",
+		"body": [
+		  "ll longestunique_substr(string s){",
+		  "      s='$'+s;",
+		  "      ll n=s.size();",
+		  "      map<char,ll>lastpos;",
+		  "     for(ll i='a';i<='z';i++){",
+		  "        lastpos[i]=0;",
+		  "     }",
+		  "      ll ans=0;",
+		  "      ll len=0;",
+		  "      for(ll i=1;i<=n;i++){",
+		  "        ",
+		  "        if(lastpos[s[i]]){",
+		  "            ans=max(ans,len);",
+		  "            len-=lastpos[s[i]];",
+		  "        }",
+		  "        len++;",
+		  "        lastpos[s[i]]=i;",
+		  "",
+		  "      }",
+		  "      ans=max(ans,len);",
+		  "      return ans;",
+		  "",
+		  "}"
+		],
+		"description": "longestunique_substr"
+	  }
+}

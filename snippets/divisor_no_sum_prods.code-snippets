@@ -1,0 +1,29 @@
+{
+	"divisor_no_sum_prods": {
+		"prefix": "divisor_no_sum_prods",
+		"body": [
+		  "void divisor_nos_sum_prod(){",
+		  "     ll n;",
+		  "      cin>>n;",
+		  "      ll sum=1;",
+		  "      ll noofdiv=1;",
+		  "      ll prod=1;",
+		  "    ",
+		  "      ll a,b;",
+		  "      ll prev_noofdiv=1;",
+		  "      while(n--){",
+		  "        cin>>a>>b;",
+		  "        //vec.push_back({a,b});",
+		  "        sum=sum*(power(a,b+1,M)-1)%M*power(a - 1, M-2,M) % M;",
+		  "        noofdiv=(noofdiv*(b+1))%M;",
+		  "        prod = power(prod,b+1,M)*power(power(a, (b*(b+1)/2),M),prev_noofdiv,M)%M;",
+		  "        prev_noofdiv=prev_noofdiv* (b+1)%(M-1);",
+		  "      } ",
+		  "    ",
+		  "      cout<<noofdiv<<\" \"<<sum<<\" \"<<prod<<endl;",
+		  "",
+		  "}"
+		],
+		"description": "divisor_no_sum_prods"
+	  }
+}

@@ -1,0 +1,18 @@
+{
+	"different_value_nos": {
+		"prefix": "different_value_nos",
+		"body": [
+		  "bitset<1000000001>vis;",
+		  "ll func(vector<ll>&vec){",
+		  "    ll n=vec.size();",
+		  "    for(ll i=0;i<n;i++){",
+		  "        vis[vec[i]]=1;",
+		  "    }",
+		  "        cout<<vis.count()<<endl;",
+		  "",
+		  "",
+		  "}"
+		],
+		"description": "different_value_nos"
+	  }
+}

@@ -1,0 +1,17 @@
+{
+	"": {
+		"prefix": "subset sum with bitset",
+		"body": [
+		  "bitset<N> can;",
+		  "cin>>n>>k;",
+		  "can[0]=true;",
+		  "fo(i,n){",
+		  "    int x;",
+		  "    cin>>x;",
+		  "    can|=(can<<x);",
+		  "}",
+		  "cout<<(can[k]?\"YES\\n\":\"NO\\n\");"
+		],
+		"description": ""
+	  }
+}

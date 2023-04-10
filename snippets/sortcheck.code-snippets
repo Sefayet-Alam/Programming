@@ -1,0 +1,14 @@
+{
+	"returns 1 if sorted else return 0": {
+		"prefix": "sortcheck",
+		"body": [
+		  "bool check(int ar[],int n){",
+		  "    if(n==1)",
+		  "        return 1;",
+		  "     bool restarray=check(ar+1,n-1);",
+		  "     return (restarray && (ar[0]<ar[1]));",
+		  "}"
+		],
+		"description": "returns 1 if sorted else return 0"
+	  }
+}

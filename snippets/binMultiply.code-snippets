@@ -1,0 +1,19 @@
+{
+	"usefull function for large binexp": {
+		"prefix": "binMultiply",
+		"body": [
+		  "long long binMultiply(long long a,long long b){",
+		  "    long long ans=0;",
+		  "    while(b>0){",
+		  "        if(b&1){",
+		  "            ans=(ans+a)%M;",
+		  "        }",
+		  "        a=(a+a)%M;",
+		  "        b>>=1;",
+		  "    }",
+		  "    return ans;",
+		  "}"
+		],
+		"description": "usefull function for large binexp"
+	  }
+}

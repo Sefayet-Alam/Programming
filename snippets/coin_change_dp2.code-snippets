@@ -1,0 +1,26 @@
+{
+	"": {
+		"prefix": "dp coin change 2",
+		"body": [
+		  "ll dp[][];",
+		  "vl coins;",
+		  "",
+		  "ll func(ll ind,ll amount){",
+		  "    if(amount==0) return 1;",
+		  "    if(ind<0) return 0;",
+		  "    if(dp[ind][amount] !=-1) return dp[ind][amount];",
+		  "",
+		  "    ll ways=0;",
+		  "    for(ll coin_amount=0;coin_amount<=amount;coin_amount+=coins[ind]){",
+		  "        ways+=func(ind-1,amount-coin_amount);",
+		  "    }",
+		  "    return dp[ind][amount]=ways;",
+		  "}",
+		  "ll coinChange(ll amount){",
+		  "    memset(dp,-1,sizeof(dp));",
+		  "    return func(coins.size()-1,amount);",
+		  "}"
+		],
+		"description": ""
+	  }
+}

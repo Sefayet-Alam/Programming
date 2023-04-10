@@ -1,0 +1,20 @@
+{
+	"": {
+		"prefix": "dp subset sum",
+		"body": [
+		  "int dp[][];",
+		  "vector<int> nums;",
+		  "bool func(int i, int sum){",
+		  "    if(sum==0) return true;",
+		  "    if(i<0) return false;",
+		  "    if(dp[i][sum]!=-1) return dp[i][sum];",
+		  "    // not consider ith index",
+		  "    int isPossible=func(i-1,sum);",
+		  "    // consider ith index",
+		  "    if(sum-nums[i]>=0) isPossible|=func(i-1,sum-nums[i]);",
+		  "    return dp[i][sum]=isPossible;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

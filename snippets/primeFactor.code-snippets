@@ -1,0 +1,17 @@
+{
+	"": {
+		"prefix": "prime factor",
+		"body": [
+		  "vl primeFactor(ll n){",
+		  "    vl res;",
+		  "    while(n>1){",
+		  "        ll a=smallest_factor[n];",
+		  "        res.pb(a);",
+		  "        while(n%a==0) n/=a;",
+		  "    }",
+		  "    return res;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

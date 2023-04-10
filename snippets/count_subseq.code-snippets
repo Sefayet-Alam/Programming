@@ -1,0 +1,18 @@
+{
+	"": {
+		"prefix": "dp subset count",
+		"body": [
+		  "int dp[105][35];",
+		  "string str;",
+		  "int func(string a,string b,int m,int n){",
+		  "    if(n<0) return 1;",
+		  "    if(m<0) return 0;",
+		  "    if(dp[m][n]!=-1) return dp[m][n];",
+		  "",
+		  "    if(a[m]==b[n]) return dp[m][n]=func(a,b,m-1,n-1)+ func(a,b,m-1,n);",
+		  "    return dp[m][n]=func(a,b,m-1,n);",
+		  "}"
+		],
+		"description": ""
+	  }
+}

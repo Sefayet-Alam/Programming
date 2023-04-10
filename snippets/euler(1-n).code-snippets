@@ -1,0 +1,31 @@
+{
+	"": {
+		"prefix": "euler totient (1 to n)",
+		"body": [
+		  "// Computes and prints totient of all numbers",
+		  "// smaller than or equal to n.",
+		  "",
+		  "#define sz 10000000",
+		  "ll prime[sz + 9], etf[sz + 9];",
+		  "",
+		  "void computeTotient(){",
+		  "    etf[1] = 1;",
+		  "    for(ll i = 2; i <= sz; i++){",
+		  "        if(!prime[i]){",
+		  "            etf[i] = i - 1;",
+		  "            for(ll j = 1; j * i <= sz; j++)",
+		  "                if(!prime[j*i])prime[j*i] = i;",
+		  "        }",
+		  "        else{",
+		  "            etf[i] = etf[prime[i]] * etf[ i/prime[i] ];",
+		  "            ll g = 1;",
+		  "            if(i % (prime[i]*prime[i]) == 0) g = prime[i];",
+		  "            etf[i] *= g;",
+		  "            etf[i] /= etf[g];",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": ""
+	  }
+}

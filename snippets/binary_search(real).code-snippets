@@ -1,0 +1,21 @@
+{
+	"": {
+		"prefix": "binary search(real number)",
+		"body": [
+		  "double func(double mid){",
+		  "",
+		  "}",
+		  "",
+		  "double bs(double l,double r){",
+		  "    double eps=1e-9;          //set the error limit here",
+		  "    while(r-l>eps) {",
+		  "        double mid=l+(r-l)/2;",
+		  "        if (func(mid)) l=mid;",
+		  "        else r=mid;",
+		  "    }",
+		  "    return l;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

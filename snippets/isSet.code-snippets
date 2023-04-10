@@ -1,0 +1,11 @@
+{
+	"": {
+		"prefix": "isSet",
+		"body": [
+		  "bool isSet(int x,int i){",
+		  "    return (x&(1<<i));",
+		  "}"
+		],
+		"description": ""
+	  }
+}
