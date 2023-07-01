@@ -1,0 +1,22 @@
+{
+	"subarray_with_even_no_of_all_elements": {
+		"prefix": "subarray_with_even_no_of_all_elements",
+		"body": [
+		  " ll ans=0;",
+		  "      string s;",
+		  "      cin>>s;",
+		  "      ll n=s.size();",
+		  "      map<ll,ll>freq;",
+		  "      freq[0]=1;",
+		  "      ll curr=0;",
+		  "      for(ll i=0;i<n;i++){",
+		  "        ll d=s[i]-'0';",
+		  "        curr^=(1LL<<d);",
+		  "        ans+=freq[curr];",
+		  "        freq[curr]++;",
+		  "      }",
+		  "      cout<<ans<<nn;"
+		],
+		"description": "subarray_with_even_no_of_all_elements"
+	  }
+}

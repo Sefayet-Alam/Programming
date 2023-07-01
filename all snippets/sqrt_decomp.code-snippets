@@ -1,0 +1,40 @@
+{
+	"o(sqrt(n))..sqrt_decomp": {
+		"prefix": "sqrt_decomp",
+		"body": [
+		  "const ll bucket=548;",
+		  "ll n, m;",
+		  "ll u, arr[N], b[N];",
+		  "",
+		  "inline void build(){",
+		  "    for(ll i=0; i<n; i+=bucket){",
+		  "        for(ll j=i; j<min(n,i+bucket); j++){",
+		  "            b[j]=arr[j];",
+		  "        }",
+		  "        sort(b+i,b+min(n,i+bucket));",
+		  "    }",
+		  "}",
+		  "",
+		  "inline int query(ll l,ll r, ll v){",
+		  "    int st=min(r+1,((l+bucket-1)/bucket)*bucket), en=st, res=0;",
+		  "    for(ll j=st; j+bucket-1<=r; j+=bucket){",
+		  "        en=j+bucket;",
+		  "        res+=lower_bound(b+j,b+en,v)-(b+j);",
+		  "    }",
+		  "    //[l,st-1] & [en,r] baki",
+		  "    for(ll j=l; j<st; j++) res+=arr[j]<v;",
+		  "    for(ll j=en; j<=r; j++) res+=arr[j]<v;",
+		  "    return res;",
+		  "}",
+		  "",
+		  "inline void update(ll l, ll r, ll in, ll k){",
+		  "    arr[in]=(u*k)/(r-l+1);",
+		  "    ll block=in/bucket;",
+		  "    for(ll j=block*bucket; j<min(n,(block+1)*bucket); j++)",
+		  "        b[j]=arr[j];",
+		  "    sort(b+block*bucket,b+min(n,(block+1)*bucket));",
+		  "}"
+		],
+		"description": "o(sqrt(n))..sqrt_decomp"
+	  }
+}

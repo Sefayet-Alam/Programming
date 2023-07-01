@@ -1,0 +1,13 @@
+{
+	"keep only unique": {
+		"prefix": "keep only unique",
+		"body": [
+		  "",
+		  "ll func(vector<ll>&a){",
+		  "    sort(a.begin(), a.end());",
+		  "    a.resize(a.end() - unique(a.begin(), a.end()));",
+		  "}"
+		],
+		"description": "keep only unique"
+	  }
+}

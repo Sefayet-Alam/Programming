@@ -1,7 +1,12 @@
 {
-	"bellman ford": {
-		"prefix": "bellman ford",
+	"bellman_ford": {
+		"prefix": "bellman_ford",
 		"body": [
+		  "#define INF 1000000009",
+		  "vpll g[N];",
+		  "ll n,m;",
+		  "vl dist(N,INF);",
+		  "vl par(N,-1);",
 		  "void bellman_ford(){",
 		  "    ll x=-1;",
 		  "    for(ll i=1;i<=n;i++){ dist[i]=INF;par[i]=-1;}",
@@ -43,6 +48,6 @@
 		  "",
 		  "}"
 		],
-		"description": "bellman ford"
+		"description": "bellman_ford"
 	  }
 }

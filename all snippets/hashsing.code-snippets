@@ -1,6 +1,6 @@
 {
-	"": {
-		"prefix": "hashing uint64_t",
+	"string_hash_full": {
+		"prefix": "string_hash_full",
 		"body": [
 		  "/***",
 		  " *",
@@ -63,7 +63,8 @@
 		  "",
 		  "    PolyHash(const char* str)",
 		  "        : PolyHash(vector<char> (str, str + strlen(str))) {}",
-		  "",
+		  "    PolyHash(string str)",
+		  "        : PolyHash(vector<char> (all(str))) {}",
 		  "    uint64_t get_hash(int l, int r){",
 		  "        int64_t h = pref[r + 1] - modmul(base_pow[r - l + 1], pref[l]);",
 		  "        return h < 0 ? h + mod : h;",
@@ -75,6 +76,6 @@
 		  "    }",
 		  "};"
 		],
-		"description": ""
+		"description": "string_hash_full"
 	  }
 }

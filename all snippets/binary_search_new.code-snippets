@@ -1,0 +1,28 @@
+{
+	"binary_search_new": {
+		"prefix": "binary_search_new",
+		"body": [
+		  "bool func(ll pos){",
+		  "",
+		  "}",
+		  "ll bs(ll low,ll high){",
+		  "    ll mid;",
+		  "    ll ans=0;",
+		  "    while(low<=high){",
+		  "        mid=low+(high-low)/2;",
+		  "        //cout<<mid<<\" \"<<func(mid)<<endl;",
+		  "        if(func(mid)){",
+		  "            ans=mid;",
+		  "            high=mid-1;",
+		  "        }",
+		  "        else{",
+		  "            low=mid+1;",
+		  "        }",
+		  "    }",
+		  "    return ans;",
+		  "}",
+		  ""
+		],
+		"description": "binary_search_new"
+	  }
+}
