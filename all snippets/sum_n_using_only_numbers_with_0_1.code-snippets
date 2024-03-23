@@ -1,0 +1,23 @@
+{
+	"will work for other bases too": {
+		"prefix": "make n using numbers 0 and 1(binary)",
+		"body": [
+		  " ll n;",
+		  "       cin>>n;",
+		  "       vector<ll>ans;",
+		  "       while(n){",
+		  "         ll tmp=n,m=0,p=1;",
+		  "         while(tmp){",
+		  "            if(tmp%10) m+=p;",
+		  "            tmp/=10;",
+		  "            p*=10; ",
+		  "         }",
+		  "         ans.push_back(m);",
+		  "         n-=m;",
+		  "       }",
+		  "       cout<<ans.size()<<nn;",
+		  "       cout<<ans<<nn;"
+		],
+		"description": "will work for other bases too"
+	  }
+}

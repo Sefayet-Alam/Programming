@@ -1,0 +1,23 @@
+{
+	"fibonacci_mat_expo_dp": {
+		"prefix": "fibonacci_mat_expo_dp",
+		"body": [
+		  "map<ll,ll>freq;",
+		  "void init(){",
+		  "     freq[0]=freq[1]=1;",
+		  "    //   if(n==0) cout<<0<<nn;",
+		  "}",
+		  "ll fibo(ll n){",
+		  "    ",
+		  "    if (freq.count(n)) return freq[n];",
+		  "	ll k=n/2;",
+		  "	if (n%2==0) { // n=2*k",
+		  "		return freq[n] = (fibo(k)*fibo(k) + fibo(k-1)*fibo(k-1)) % M;",
+		  "	} else { // n=2*k+1",
+		  "		return freq[n] = (fibo(k)*fibo(k+1) + fibo(k-1)*fibo(k)) % M;",
+		  "	}",
+		  "}"
+		],
+		"description": "fibonacci_mat_expo_dp"
+	  }
+}

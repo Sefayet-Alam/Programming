@@ -1,0 +1,34 @@
+{
+	"There is a n*n grid with m obstacles..Find if it's possibble to reach n,n from 1,1": {
+		"prefix": "grid_with_obstacles",
+		"body": [
+		  "",
+		  "ll n,m,t=0;",
+		  "",
+		  "vpll Move= {{-1,0},{0,-1},{1,0},{0,1},{1,1},{1,-1},{-1,-1},{-1,1}};",
+		  "map<pll,bool>mpp;",
+		  "map<pll,bool>vis;",
+		  "",
+		  "",
+		  "bool dfs(pll vertex){",
+		  "",
+		  "    if(vertex.first==1 || vertex.second==n) return true;",
+		  "    // deb2(vertex.first,vertex.second);",
+		  "    bool f=0;",
+		  "    for(pll &child: Move){",
+		  "       ",
+		  "        ll x=child.first+vertex.first;",
+		  "        ll y=child.second+vertex.second;",
+		  "        // deb2(x,y);",
+		  "        // deb(isValid(x,y));",
+		  "        if(mpp.find({x,y})==mpp.end()) continue;",
+		  "        mpp.erase(mpp.find({x,y}));",
+		  "        f|=dfs({x,y});",
+		  "      ",
+		  "    }",
+		  "    return f;",
+		  "}"
+		],
+		"description": "There is a n*n grid with m obstacles..Find if it's possibble to reach n,n from 1,1"
+	  }
+}

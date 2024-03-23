@@ -1,0 +1,36 @@
+{
+	"solution for ax+by=c": {
+		"prefix": "ax+by=c any solution",
+		"body": [
+		  "",
+		  "//find x0,y0 for ax+by=c",
+		  "ll gcd(ll a, ll b,ll &x, ll &y){",
+		  "    if(b == 0){",
+		  "        x= 1; y = 0;",
+		  "        return a;",
+		  "    }",
+		  "    ll x1, y1;",
+		  "    ll d = gcd(b, a%b, x1, y1);",
+		  "    x = y1;",
+		  "    y = x1 - y1*(a/b);",
+		  "    return d;",
+		  "}",
+		  "",
+		  "pll solution(ll a, ll b, ll n)",
+		  "{",
+		  "    ll x0, y0;",
+		  "    ll g = gcd(a, b, x0, y0);",
+		  "    if(n%g != 0){",
+		  "        return {M,M};",
+		  "        // no solution",
+		  "    }",
+		  "    x0 = x0*n/g;",
+		  "    y0 = y0*n/g;",
+		  "    // single valid answer",
+		  "    // cout<<\"x = \"<<x0<<\", y = \"<<y0<<endl;",
+		  "    return {x0,y0};",
+		  "}"
+		],
+		"description": "solution for ax+by=c"
+	  }
+}

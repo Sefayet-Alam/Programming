@@ -1,0 +1,33 @@
+{
+	"returns the root and iterations of a polymnomial function": {
+		"prefix": "newton_raphson",
+		"body": [
+		  "def newton_raphson(func, func_derivative, x0, tot = 1e-20, max_iter =100):",
+		  "  x = x0",
+		  "  iter_count =0",
+		  "  while iter_count<max_iter:",
+		  "    f_x = func(x)",
+		  "    f_prime_x = func_derivative(x)",
+		  "    if abs(f_x)<tot:",
+		  "      return x,iter_count",
+		  "    if f_prime_x==0:",
+		  "      return None, iter_count",
+		  "    x = x- f_x/f_prime_x",
+		  "    iter_count+=1",
+		  "  #return None, iter_count",
+		  "",
+		  "def cubic_function(x):",
+		  "  return x**3 - 4*x**2 - x+4",
+		  "def cubic_function_derivative(x):",
+		  "  return 3*x**2 - 8*x - 1",
+		  "",
+		  "initial_guess = 3.0",
+		  "root, iterations = newton_raphson(cubic_function,cubic_function_derivative,initial_guess)",
+		  "if root is not None:",
+		  "  print(\"Root = \", root, \", Iteration = \", iterations)",
+		  "else:",
+		  "  print('Did not converge')"
+		],
+		"description": "returns the root and iterations of a polymnomial function"
+	  }
+}

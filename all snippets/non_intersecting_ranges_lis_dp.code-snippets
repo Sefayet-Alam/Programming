@@ -1,0 +1,18 @@
+{
+	"non_intersecting_ranges_lis_dp": {
+		"prefix": "non_intersecting_ranges_lis_dp",
+		"body": [
+		  "ll lis=0;",
+		  "for (int i = 0; i < n; i++) cin >> a[i].first >> a[i].second;",
+		  "	sort(a, a + n, greater<pair<int, int>>());",
+		  "	// finding the LIS of a reversed array = finding the LDS",
+		  "	for (int i = 0; i < n; i++) {",
+		  "		if (s.upper_bound(a[i].second) == s.end()) lis++;",
+		  "		else s.erase(s.upper_bound(a[i].second));",
+		  "		s.insert(a[i].second);",
+		  "	}",
+		  "	cout << lis;"
+		],
+		"description": "non_intersecting_ranges_lis_dp"
+	  }
+}

@@ -1,0 +1,24 @@
+{
+	"unordered_hashing": {
+		"prefix": "unordered_hashing",
+		"body": [
+		  "  unordered_map<ll, bool> mpp;",
+		  "            vector<ll> hashes(n + 1, 0), hashes2(m + 1, 0);",
+		  "",
+		  "            for (ll j = 0; j < n; j++)",
+		  "            {",
+		  "                ll aa = s[j] - 'a' + 1;",
+		  "                curr = ((aa)*power2(mod, aa));",
+		  "                hashes[j + 1] = curr;",
+		  "",
+		  "                hashes[j + 1] = (hashes[j + 1] + hashes[j]);",
+		  "                if (j + 1 - i >= 0)",
+		  "                {",
+		  "                    ll val = (hashes[j + 1] - hashes[j + 1 - i]);",
+		  "                    mpp[val] = 1;",
+		  "                }",
+		  "            }"
+		],
+		"description": "unordered_hashing"
+	  }
+}

@@ -1,0 +1,40 @@
+{
+	"no_of_hamiltonian_paths": {
+		"prefix": "no_of_hamiltonian_paths",
+		"body": [
+		  " ll n, m;",
+		  "        cin >> n >> m;",
+		  "        vector<ll> g[20];",
+		  "        ll x, y;",
+		  "        for (ll i = 0; i < m; i++)",
+		  "        {",
+		  "            cin >> x >> y;",
+		  "            x--, y--;",
+		  "            g[y].push_back(x);",
+		  "        }",
+		  "",
+		  "        mem(dp, 0);",
+		  "        dp[1][0] = 1;",
+		  "        //bruteforce over all subsets",
+		  "         for(ll s=2;s<(1LL<<n);s++){",
+		  "             //we only consider the subsets that have first city",
+		  "             if(s & (1LL<<0)==0) continue; //subsets that doesn't have 1st city",
+		  "             // also only consider subsets with the last city if it's the full subset",
+		  "             if ((s & (1LL << (n - 1))) && s != ((1LL << n) - 1)) continue; //has last city but is not full subset",
+		  "             for(ll end=0;end<n;end++){",
+		  "                   if((s & (1LL<<end))==0) continue;  // the subset that doesn't include the current end",
+		  "                   ll prev=s-(1LL<<end);",
+		  "                   for(ll it:g[end]){",
+		  "                     if(s&(1LL<<it)){",
+		  "                         dp[s][end]=(dp[prev][it]+dp[s][end])%M;",
+		  "                     }",
+		  "                   }",
+		  "             }",
+		  "",
+		  "        }",
+		  "        ll ans = dp[(1LL << n) - 1][n - 1];",
+		  "        cout << ans << nn;"
+		],
+		"description": "no_of_hamiltonian_paths"
+	  }
+}

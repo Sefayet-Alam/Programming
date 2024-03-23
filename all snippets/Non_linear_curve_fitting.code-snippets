@@ -1,0 +1,42 @@
+{
+	"curve fitting": {
+		"prefix": "Non_Linear curve fitting",
+		"body": [
+		  "import numpy as np",
+		  "from scipy.optimize import curve_fit",
+		  "import matplotlib.pyplot as plt",
+		  "",
+		  "# Define the form of the function you want to fit",
+		  "def func(x, a, b, c):",
+		  "    return a * np.cos(b * x) + c   # a * cos(b * x) + c",
+		  "",
+		  "# Generate some data",
+		  "x = np.linspace(0, 4, 50)       # 20 generated numbers between 0 and 4",
+		  "y = func(x, 2, 1, 0.5)",
+		  "y_noise = 0.1 * np.random.normal(size=x.size)",
+		  "ydata = y + y_noise",
+		  "",
+		  "# Fit the function to the data",
+		  "popt, pcov = curve_fit(func, x, ydata)",
+		  "",
+		  "# Print the optimal parameters",
+		  "print(f\"a = {popt[0]}, b = {popt[1]}, c = {popt[2]}\")",
+		  "",
+		  "# Plot the original data",
+		  "plt.scatter(x, ydata, label='Data')",
+		  "",
+		  "# Plot the fitted curve",
+		  "plt.plot(x, func(x, *popt), 'r-', label='Fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt))",
+		  "",
+		  "# Add the equation to the graph",
+		  "plt.text(0.5, 0.5, 'y = %5.3f * sin(%5.3f * x) + %5.3f' % tuple(popt), transform=plt.gca().transAxes)",
+		  "",
+		  "plt.xlabel('x')",
+		  "plt.ylabel('y')",
+		  "plt.legend()",
+		  "plt.show()",
+		  ""
+		],
+		"description": "curve fitting"
+	  }
+}

@@ -1,0 +1,35 @@
+{
+	"root finding": {
+		"prefix": "Ramanujan's method",
+		"body": [
+		  "#Ramanujans method for root finding    Oct 28, 2023",
+		  "err=1e-6",
+		  "root=-1",
+		  "func= [13/12, -3/8, 1/24]",
+		  "a= [0]*101",
+		  "b= [0]*101",
+		  "",
+		  "size = len(func)",
+		  "for i in range(0, size):",
+		  "  a[i]= func[i]",
+		  "",
+		  "b[0]=1",
+		  "b[1]= a[0]*b[0]",
+		  "",
+		  "root= b[0]/ b[1]",
+		  "",
+		  "",
+		  "for i in range(2, 100):",
+		  "  for j in range(0, i):",
+		  "    b[i]+= a[j]*b[i-j-1]",
+		  "  if abs(root - b[i-1]/b[i]) <= err :",
+		  "    ans= b[i-1]/b[i]",
+		  "    break",
+		  "  else:",
+		  "    root=  b[i-1]/b[i]",
+		  "",
+		  "print(\"Approximate root is: \",root)"
+		],
+		"description": "root finding"
+	  }
+}
